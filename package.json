@@ -1,0 +1,25 @@
+{
+  "name": "koschei-spark",
+  "version": "1.0.0",
+  "description": "Boilerplate code for getting front-end projects running quickly. Created by [Jordan Koschei](https://twitter.com/jordankoschei).",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jordan Koschei",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-copy": "0.0.2",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.1",
+    "gulp-uglify": "^1.5.2"
+    "imagemin-pngquant": "^4.2.0",
+    "browser-sync": "^2.12.8",
+  }
+}
