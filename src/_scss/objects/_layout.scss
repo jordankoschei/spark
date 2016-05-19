@@ -1,0 +1,15 @@
+.inner {
+  max-width: $baseMaxWidth;
+
+  @if $siteCentered {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @if $siteFullwidth == true {
+    padding-left: $baseSpacing;
+    padding-right: $baseSpacing;
+  }
+
+  @include clearfix;
+}

@@ -1,0 +1,34 @@
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  background-color: $bgrColor;
+
+  font-size: $baseFontSize / 16px + em;
+  line-height: $baseLineHeight;
+}
+
+body {
+  @if $siteFullwidth == false {
+    max-width: $baseMaxWidth;
+    padding-left: $baseSpacing;
+    padding-right: $baseSpacing;
+  }
+
+  @if $siteCentered == true and $siteFullwidth == false {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  background-color: $contentColor;
+  font-family: $baseFont;
+  color: $textColor;
+  min-width: 320px;
+
+  @if $baseline {
+    $baselineSize: stripUnits($pixelLineHeight);
+    background-image: url(http://basehold.it/i/#{$baselineSize});
+  }
+}

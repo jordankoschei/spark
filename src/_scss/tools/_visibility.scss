@@ -1,0 +1,40 @@
+@mixin srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.sr-only {
+  @include srOnly;
+}
+
+.hidden
+%hidden {
+  display: none !important;
+}
+
+.invisible,
+%invisible {
+  visibility: hidden !important;
+}
+
+
+@for $i from 1 through map-get($susy, 'columns') {
+  @each $break, $size in $breakpoints {
+    .hidden-#{$break}-up {
+      @include media('>#{$break}') {
+        display: none !important;
+      }
+    }
+    .hidden-#{$break}-down {
+      @include media('<#{$break}') {
+        display: none !important;
+      }
+    }
+  }
+}

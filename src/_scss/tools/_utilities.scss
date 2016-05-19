@@ -1,0 +1,50 @@
+@function stripUnits($number) {
+    @return $number / ($number * 0 + 1);
+}
+
+
+@function assignInputs($inputs, $pseudo: null) {
+  $list: ();
+
+  @each $input in $inputs {
+    $input: unquote($input);
+    $input: if($pseudo, $input + ":" + $pseudo, $input);
+    $list: append($list, $input, comma);
+  }
+
+  @return $list;
+}
+
+
+$buttons-list: 'button',
+               '[type="button"]',
+               '[type="reset"]',
+               '[type="submit"]';
+
+$all-buttons:        assignInputs($buttons-list);
+$all-buttons-active: assignInputs($buttons-list, active);
+$all-buttons-focus:  assignInputs($buttons-list, focus);
+$all-buttons-hover:  assignInputs($buttons-list, hover);
+
+$text-inputs-list: '[type="color"]',
+                   '[type="date"]',
+                   '[type="datetime"]',
+                   '[type="datetime-local"]',
+                   '[type="email"]',
+                   '[type="month"]',
+                   '[type="number"]',
+                   '[type="password"]',
+                   '[type="search"]',
+                   '[type="tel"]',
+                   '[type="text"]',
+                   '[type="time"]',
+                   '[type="url"]',
+                   '[type="week"]',
+                   'input:not([type])',
+                   'textarea';
+
+$all-text-inputs:         assignInputs($text-inputs-list);
+$all-text-inputs-active:  assignInputs($text-inputs-list, active);
+$all-text-inputs-focus:   assignInputs($text-inputs-list, focus);
+$all-text-inputs-hover:   assignInputs($text-inputs-list, hover);
+$all-text-inputs-invalid: assignInputs($text-inputs-list, invalid);

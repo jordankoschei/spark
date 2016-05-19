@@ -1,0 +1,25 @@
+@for $i from 1 through map-get($susy, 'columns') {
+  .span-#{$i} {
+    @include span($i);
+  }
+}
+
+@for $i from 1 through map-get($susy, 'columns') {
+  @each $break, $size in $breakpoints {
+    .span-#{$break}-#{$i} {
+      @include media('>#{$break}') {
+        @include span($i);
+      }
+    }
+
+    .panel-#{$break}-center {
+      @include media('>#{$break}') {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+.span-last { margin-right: 0; }

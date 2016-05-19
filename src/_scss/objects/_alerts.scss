@@ -1,0 +1,38 @@
+@mixin alert($color) {
+
+  @if(lightness($color) > 50) {
+    background-color: darken($color, 15%);
+    border: 1px darken($color, 40%) solid;
+    color: darken($color, 65%);
+  } @else {
+    background-color: transparentize($color, .75);
+    border: 1px $color solid;
+    color: darken($color, 10%);
+  }
+}
+
+
+.alerts {
+  @extend %ui-list;
+}
+
+.alert {
+  border-radius: $baseBorderRadius;
+  margin-bottom: $baseSpacing;
+  padding: ($smallSpacing / 1.5) $smallSpacing;
+  @include alert($bgrAltColor);
+}
+
+$alertColors: map-merge($colors, (
+  'action': $actionColor,
+  'success': $successColor,
+  'warning': $warningColor,
+  'error': $errorColor,
+  'danger': $errorColor
+));
+
+@each $name, $color in $alertColors {
+  .alert--#{$name} {
+    @include alert($color);
+  }
+}

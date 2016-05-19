@@ -1,0 +1,55 @@
+#{$all-buttons},
+.btn {
+  @include button($actionColor);
+  appearance: none;
+  border: 0;
+  border-radius: $baseBorderRadius;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $uiFont;
+  font-size: $baseFontSize;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: $smallSpacing $baseSpacing;
+  text-decoration: none;
+  transition: background-color $animDuration $animEasing,
+              color $animDuration $animEasing;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+  }
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &.btn--sm {
+    font-size: $baseFontSize * .85;
+    padding: ($smallSpacing * .75) ($baseSpacing * .75);
+  }
+
+  &.btn--lg {
+    font-size: $baseFontSize * 1.25;
+    padding: ($smallSpacing * 1.25) ($baseSpacing * 1.5);
+  }
+
+  &.btn--outline {
+    background-color: transparent;
+
+    &:disabled {
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+    }
+  }
+}

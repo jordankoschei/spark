@@ -1,0 +1,28 @@
+a {
+  color: $linkColor;
+  transition: color $animDuration $animEasing;
+
+  &:hover,
+  &:focus {
+    color: lighten($linkColor, 15%);
+  }
+}
+
+.ui-link,
+%ui-link {
+  text-decoration: none;
+  transition: color $animDuration $animEasing, background $animDuration $animEasing;
+
+  &:hover,
+  &:focus {
+    background-color: $uiLinkHoverColor;
+    color: $linkColor;
+  }
+
+  &.is-current {
+    background-color: darken($uiLinkHoverColor, 2%);
+    color: $textColor;
+    cursor: default;
+    pointer-events: none;
+  }
+}

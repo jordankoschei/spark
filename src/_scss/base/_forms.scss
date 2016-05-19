@@ -1,0 +1,78 @@
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  font-family: $uiFont;
+  font-weight: 600;
+  margin-bottom: ($smallSpacing / 2);
+  padding: 0;
+}
+
+input,
+select {
+  display: block;
+  font-family: $baseFont;
+  font-size: $baseFontSize;
+  margin-bottom: $smallSpacing;
+}
+
+#{$all-text-inputs},
+select[multiple] {
+  background-color: map-get($colors, 'white');
+  border: $baseBorder;
+  border-radius: $baseBorderRadius;
+  box-shadow: $formShadow;
+  padding: ($smallSpacing / 2);
+  transition: border $animDuration $animEasing,
+              box-shadow $animDuration $animEasing;
+  width: 100%;
+
+  &:hover {
+    border-color: darken($borderColorDk, 10%);
+  }
+
+  &:focus {
+    border-color: $actionColor;
+    box-shadow: $formSelectShadow;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: darken(map-get($colors, 'white'), 1%);
+    cursor: not-allowed;
+
+    &:hover {
+      border: $baseBorder;
+    }
+  }
+}
+
+textarea {
+  margin-bottom: $smallSpacing;
+  resize: vertical;
+}
+
+[type="search"] {
+  appearance: none;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: ($smallSpacing / 2);
+}
+
+[type="file"] {
+  margin-bottom: $smallSpacing;
+  width: 100%;
+}
+
+select {
+  margin-bottom: $smallSpacing;
+  max-width: 100%;
+  width: auto;
+}

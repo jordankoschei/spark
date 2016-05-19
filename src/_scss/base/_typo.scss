@@ -1,0 +1,95 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: $headingFont;
+    color: $headingColor;
+}
+
+h1, .h1 {
+    @extend %typeRhythm;
+    @include fontSize($h1Size);
+}
+
+h2, .h2 {
+    @extend %typeRhythm;
+    @include fontSize($h2Size);
+}
+
+h3, .h3 {
+    @extend %typeRhythm;
+    @include fontSize($h3Size);
+}
+
+h4, .h4 {
+    @extend %typeRhythm;
+    @include fontSize($h4Size);
+}
+
+h5, .h5 {
+    @extend %typeRhythm;
+    @include fontSize($h5Size);
+}
+
+h6, .h6 {
+    @extend %typeRhythm;
+    @include fontSize($h6Size);
+}
+
+
+ul, ol, dd {
+    @extend %typeRhythm;
+    margin-left: $baseSpacing;
+}
+
+li > ul,
+li > ol {
+    margin-bottom: 0;
+}
+
+p {
+    @extend %typeRhythm;
+
+    &:last-child { margin-bottom: 0; }
+}
+
+blockquote {
+    @extend %typeRhythm;
+    border-left: .25em $borderColorLt solid;
+    padding-left: $baseSpacing;
+    padding-right: $baseSpacing;
+    padding-top: $baseSpacing;
+    padding-bottom: $baseSpacing;
+    background-color: darken(map-get($colors, 'lightestGray'), 1%);
+    quotes: "“" "”";
+
+    p {
+        text-indent: -0.36em;
+
+        &:before {
+            content: "“";
+            content: open-quote;
+        }
+
+        &:after {
+            content: "";
+            content: no-close-quote;
+        }
+
+        &:last-of-type:after {
+            content: "”";
+            content: close-quote;
+        }
+    }
+}
+
+dl {
+    @extend %typeRhythm;
+}
+dt {
+    font-family: $headingFont;
+    font-weight: bold;
+}
+dd {
+    margin: 0;
+    margin-bottom: $baseSpacing;
+
+    &:last-child { margin-bottom: 0; }
+}

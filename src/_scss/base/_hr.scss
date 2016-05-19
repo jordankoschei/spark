@@ -1,0 +1,6 @@
+hr {
+  border: none;
+  border-bottom: $baseBorder;
+  margin-top: -1px;
+  @extend %typeRhythm;
+}

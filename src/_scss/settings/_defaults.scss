@@ -1,0 +1,106 @@
+// Layout
+$siteFullwidth: true !default;
+$baseMaxWidth: 1200px !default;
+$siteCentered: true !default;
+
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  gutter-position: split,
+  global-box-sizing: border-box
+) !default;
+
+$breakpoints: (
+  sm: 480px,
+  md: 720px,
+  lg: 1024px,
+  xl: 1200px
+) !default;
+
+
+// Colors
+$colors: (
+  'white': #fff,
+
+  'lightestGray': #f8f8f8,
+  'lightGray': #eee,
+  'gray': #ccc,
+  'mutedGray': #777,
+  'darkGray': #444,
+  'darkestGray': #222,
+
+  'blue': #2980b9,
+  'red': #c0392b,
+  'orange': #f39c12,
+  'green': #27ae60
+) !default;
+
+$contentColor: map-get($colors, 'lightestGray') !default;
+$brandColor: map-get($colors, 'blue') !default;
+$actionColor: map-get($colors, 'blue') !default;
+$linkColor: map-get($colors, 'blue') !default;
+$bgrColor: map-get($colors, 'lightestGray') !default;
+$bgrAltColor: map-get($colors, 'white') !default;
+
+$errorColor: map-get($colors, 'red') !default;
+$warningColor: map-get($colors, 'orange') !default;
+$successColor: map-get($colors, 'green') !default;
+
+$bgrColor: map-get($colors, 'lightestGray') !default;
+$textColor: map-get($colors, 'darkGray') !default;
+$headingColor: map-get($colors, 'darkestGray') !default;
+$mutedColor: map-get($colors, 'mutedGray') !default;
+
+$uiLinkHoverColor: map-get($colors, 'lightestGray') !default;
+
+
+// Fonts
+$fonts: (
+  'serif': #{Georgia, Times, 'Times New Roman', serif},
+  'sans': #{'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif}
+) !default;
+
+$baseFont: map-get($fonts, 'serif') !default;
+$headingFont: map-get($fonts, 'sans') !default;
+$uiFont: map-get($fonts, 'sans') !default;
+
+$baseFontSize: 18px !default;
+$uiFontSize: 16px !default;
+$baseLineHeight: 1.5 !default;
+
+$pixelLineHeight: ($baseLineHeight * $baseFontSize) !default;
+
+$h1Size: 48px !default;
+$h2Size: 36px !default;
+$h3Size: 30px !default;
+$h4Size: 24px !default;
+$h5Size: 20px !default;
+$h6Size: 18px !default;
+
+
+// Spacing
+$baseSpacing: $baseLineHeight * 1rem !default;
+$smallSpacing: ($baseSpacing / 2) !default;
+$largeSpacing: ($baseSpacing * 2) !default;
+
+
+// Motion
+$animDuration: .125s !default;
+$animEasing: ease !default;
+
+
+// Borders
+$borderColorDk: #ddd !default;
+$borderColorLt: #eee !default;
+$baseBorder: 1px $borderColorDk solid !default;
+$baseBorderRadius: 3px !default;
+
+
+// Shadows
+$baseShadow: 0 1px 2px transparentize(#000, .9) !default;
+$formShadow: inset 0 1px 2px transparentize(#000, .85) !default;
+$formSelectShadow: $formShadow, 0 0 6px $actionColor !default;
+
+
+// Debug
+$baseline: false !default;
